@@ -1,5 +1,6 @@
 import Versions from './components/Versions'
 import electronLogo from './assets/electron.svg'
+import { css } from '@panda/css'
 
 function App(): React.JSX.Element {
   const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
@@ -15,7 +16,7 @@ function App(): React.JSX.Element {
       <p className="tip">
         Please try pressing <code>F12</code> to open the devTool
       </p>
-      <div className="actions">
+      <div className={styles.actions}>
         <div className="action">
           <a href="https://electron-vite.org/" target="_blank" rel="noreferrer">
             Documentation
@@ -30,6 +31,15 @@ function App(): React.JSX.Element {
       <Versions></Versions>
     </>
   )
+}
+const styles = {
+  actions: css({
+    display: 'flex',
+    paddingTop: '100px',
+    margin: '-2.5',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start'
+  })
 }
 
 export default App
