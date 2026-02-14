@@ -11,6 +11,9 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
+      "@panda/*": [
+        "src/generated/styled-system/*"
+      ],
       "@renderer/*": [
         "src/renderer/src/*"
       ]
